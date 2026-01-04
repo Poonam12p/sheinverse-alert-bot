@@ -69,18 +69,5 @@ def compare(new):
     return alerts
 
 def main():
-    data = scrape()
-    alerts = compare(data)
-
-    for tag, p in alerts:
-        send(
-            f"{tag}\n\n"
-            f"👗 {p['name']}\n"
-            f"📦 {p['stock']}\n"
-            f"💰 {p['price']}\n"
-            f"🔗 {p['link']}"
-        )
-
-if __name__ == "__main__":
-    main()
-  
+    send("✅ TEST SUCCESS\n\nBot is working & posting ONLY to the channel.")
+    
