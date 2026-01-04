@@ -68,6 +68,17 @@ def compare(new):
     json.dump(new, open(DATA_FILE, "w"), indent=2)
     return alerts
 
+
 def main():
-    send("✅ TEST SUCCESS\n\nBot is working & posting ONLY to the channel.")
-    
+    data = scrape()
+    alerts = compare(data)
+
+    for tag, p in alerts:
+        send(
+            f"{tag}\n\n"
+            f"👗 {p['name']}\n"
+            f"📦 {p['stock']}\n"
+            f"💰 {p['price']}\n"
+            f"🔗 {p['link']}"
+        )
+        
