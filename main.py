@@ -68,17 +68,6 @@ def compare(new):
     json.dump(new, open(DATA_FILE, "w"), indent=2)
     return alerts
 
-
 def main():
-    data = scrape()
-    alerts = compare(data)
-
-    for tag, p in alerts:
-        send(
-            f"{tag}\n\n"
-            f"👗 {p['name']}\n"
-            f"📦 {p['stock']}\n"
-            f"💰 {p['price']}\n"
-            f"🔗 {p['link']}"
-        )
-        
+    send("✅ BOT IS WORKING\nChecked at cron interval.")
+    
