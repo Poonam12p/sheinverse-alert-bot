@@ -69,5 +69,7 @@ def compare(new):
     return alerts
 
 def main():
-    send("✅ BOT IS WORKING\nChecked at cron interval.")
+    products = fetch()
+    send(f"DEBUG: Found {len(products)} products")
+    
     
